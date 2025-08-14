@@ -1,32 +1,17 @@
 package cms.user;
 
-public class GuestUser {
-	private final int id;
-	private final String nome;
-	private final String email;
-	private final String password;
+public class GuestUser extends User{
+	private final int ID;
+	private String nome;
+	private String email;
+	private String password;
 
-	public GuestUser(int id, String nome, String email, String password) {
-		this.id = id;
+	public GuestUser(int ID, String nome, String email, String password) {
+		super(ID, nome, email, password);
+		this.ID = ID;
 		this.nome = nome;
 		this.email = email;
 		this.password = password;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public boolean checkPassword(String p) {
-		return password.equals(p);
 	}
 
 	public void viewContent(int contentId) {
