@@ -1,17 +1,24 @@
 package cms.user;
 
 public abstract class User {
-	private long id;
+	private final int ID;
 	private String nome;
 	private String email;
 	private String password;
 	
-	public boolean checkPassword(String password) { 
-		return password.equals(this.password) ? true : false;
+	public User(int ID, String nome, String email, String password) {
+		this.ID = ID;
+		this.nome = nome;
+		this.email = email;
+		this.password = password;
 	}
 
-	public long getId() {
-		return id;
+	public boolean checkPassword(String p) { 
+		return password.equals(p);
+	}
+
+	public int getId() {
+		return ID;
 	}
 
 	public String getNome() {
